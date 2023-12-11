@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-app-service
+spec:
+  selector:
+    app: node-app
+  ports:
+    - protocol: TCP
+      port: 80  # The port you want to expose externally
+      targetPort: 3000  # The port your Node.js app is listening on inside the pod
+  type: LoadBalancer  # Expose the service to the external world
